@@ -1,5 +1,7 @@
 // AutoTransform.cpp : 定义控制台应用程序的入口点。
-//
+// createAutoTransform : 节点对象始终面向用户视点
+// createMatrixTransform : 沿Z轴逆时针旋转45°
+// createPositionAttitudeTransform : 沿Z轴顺时针旋转45°
 
 #include "stdafx.h"
 #include<osg/AutoTransform>
