@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>G:\OSG\include;$(IncludePath)</IncludePath>
-    <LibraryPath>G:\OSG\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(OSG_INCLUDE);$(IncludePath)</IncludePath>
+    <LibraryPath>$(OSG_LIB);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
