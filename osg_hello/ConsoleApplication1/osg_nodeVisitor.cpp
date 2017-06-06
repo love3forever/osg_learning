@@ -71,7 +71,6 @@ int main(int argc,char** argv)
 	{
 		root->accept(infoVisitor);
 	}
-	std::cin;
     return 0;
 }
 

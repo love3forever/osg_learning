@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osg_hello", "osg_hello\osg_
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osg_nodeVisitor", "ConsoleApplication1\ConsoleApplication1.vcxproj", "{80C94CEC-4003-4157-A0A9-2A7962073DCD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CustomizeNodeCallback", "CustomizeNodeCallback\CustomizeNodeCallback.vcxproj", "{26888342-1C41-41B2-9A15-A038AF2DC4AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{80C94CEC-4003-4157-A0A9-2A7962073DCD}.Release|x64.Build.0 = Release|x64
 		{80C94CEC-4003-4157-A0A9-2A7962073DCD}.Release|x86.ActiveCfg = Release|Win32
 		{80C94CEC-4003-4157-A0A9-2A7962073DCD}.Release|x86.Build.0 = Release|Win32
+		{26888342-1C41-41B2-9A15-A038AF2DC4AB}.Debug|x64.ActiveCfg = Debug|x64
+		{26888342-1C41-41B2-9A15-A038AF2DC4AB}.Debug|x64.Build.0 = Debug|x64
+		{26888342-1C41-41B2-9A15-A038AF2DC4AB}.Debug|x86.ActiveCfg = Debug|Win32
+		{26888342-1C41-41B2-9A15-A038AF2DC4AB}.Debug|x86.Build.0 = Debug|Win32
+		{26888342-1C41-41B2-9A15-A038AF2DC4AB}.Release|x64.ActiveCfg = Release|x64
+		{26888342-1C41-41B2-9A15-A038AF2DC4AB}.Release|x64.Build.0 = Release|x64
+		{26888342-1C41-41B2-9A15-A038AF2DC4AB}.Release|x86.ActiveCfg = Release|Win32
+		{26888342-1C41-41B2-9A15-A038AF2DC4AB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
