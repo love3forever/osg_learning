@@ -109,7 +109,7 @@ osg::Drawable* createRoomRoof() {
 int main()
 {
 	osg::ref_ptr<osg::Geode> geode = new osg::Geode;
-	geode->addDrawable(createHouseWall());
+	//geode->addDrawable(createHouseWall());
 	geode->addDrawable(createRoomRoof());
 
 	osgViewer::Viewer viewer;
