@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.12
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "osg_hello", "osg_hello\osg_hello.vcxproj", "{28BD22B2-E06E-45E9-ACFF-775A131D8545}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LODNode", "LODNode\LODNode.vcxproj", "{7F05C236-ABFA-4A45-99F3-95953458103D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynamicLine", "DynamicLine\DynamicLine.vcxproj", "{97E39412-4284-4976-9999-C3F540D64C3F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleRoom", "SimpleRoom\SimpleRoom.vcxproj", "{ACB06877-3D65-48DE-AA3B-3FC998AF9DD2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,14 @@ Global
 		{97E39412-4284-4976-9999-C3F540D64C3F}.Release|x64.Build.0 = Release|x64
 		{97E39412-4284-4976-9999-C3F540D64C3F}.Release|x86.ActiveCfg = Release|Win32
 		{97E39412-4284-4976-9999-C3F540D64C3F}.Release|x86.Build.0 = Release|Win32
+		{ACB06877-3D65-48DE-AA3B-3FC998AF9DD2}.Debug|x64.ActiveCfg = Debug|x64
+		{ACB06877-3D65-48DE-AA3B-3FC998AF9DD2}.Debug|x64.Build.0 = Debug|x64
+		{ACB06877-3D65-48DE-AA3B-3FC998AF9DD2}.Debug|x86.ActiveCfg = Debug|Win32
+		{ACB06877-3D65-48DE-AA3B-3FC998AF9DD2}.Debug|x86.Build.0 = Debug|Win32
+		{ACB06877-3D65-48DE-AA3B-3FC998AF9DD2}.Release|x64.ActiveCfg = Release|x64
+		{ACB06877-3D65-48DE-AA3B-3FC998AF9DD2}.Release|x64.Build.0 = Release|x64
+		{ACB06877-3D65-48DE-AA3B-3FC998AF9DD2}.Release|x86.ActiveCfg = Release|Win32
+		{ACB06877-3D65-48DE-AA3B-3FC998AF9DD2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
