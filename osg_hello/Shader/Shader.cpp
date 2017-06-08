@@ -1,0 +1,94 @@
+// Shader.cpp : 定义控制台应用程序的入口点。
+//
+
+#include "stdafx.h"
+#include<osg/Program>
+#include<osgDB/ReadFile>
+#include<osgViewer/Viewer>
+
+
+static const char* vertSource = {
+	"varying vec3 normal;\n"
+	"void main()\n"
+	"{\n"
+	"	normal = normalize(gl_NormalMatrix * gl_Normal);\n"
+	"	gl_Position = ftransform();\n"
+	"}\n"
+};
+
+static const char* fragSource = {
+	"uniform vec4 mainColor;\n"
+	"varying vec3 normal;\n"
+	"void main()\n"
+	"{\n"
+	"	float intensity = dot(vec3(gl_LightSource[0].position),normal);\n"
+	"	if(intensity>0.95) gl_FragColor = mainColor;\n"
+	"	else if(intensity>0.5) gl_FragColor = vec4(0.6,0.3,0.3,1.0);\n"
+	"	else if(intensity>0.25) gl_FragColor = vec4(0.4,0.2,0.2,1.0);\n"
+	"	else gl_FragColor = vec4(0.2,0.1,0.1,1.0);\n"
+	"}\n"
+};
+
+
+class ColorCallback :public osg::Uniform::Callback {
+public:
+	ColorCallback() :_incRed(false) {}
+
+	virtual void operator()(osg::Uniform* uniform, osg::NodeVisitor* nv) {
+		if (!uniform) return;
+		osg::Vec4 color;
+		uniform->get(color);
+
+		if (_incRed == true) {
+			if (color.x() < 1.0) color.x() += 0.01;
+			else _incRed = false;
+		}
+		else
+		{
+			if (color.x() > 0.0) color.x() -= 0.01;
+			else _incRed = true;
+		}
+
+		uniform->set(color);
+	}
+
+protected:
+	bool _incRed;
+};
+
+
+void createShaders(osg::StateSet& ss) {
+	osg::ref_ptr<osg::Shader> vertShader = new osg::Shader(osg::Shader::VERTEX, vertSource);
+	osg::ref_ptr<osg::Shader> fragShader = new osg::Shader(osg::Shader::FRAGMENT, fragSource);
+
+	//osg::ref_ptr<osg::Shader> shader = osgDB::readShaderFile("shaders/self/se.vs");
+
+	osg::ref_ptr<osg::Program> program = new osg::Program;
+	program->addShader(vertShader.get());
+	program->addShader(fragShader.get());
+	//program->addShader(shader.get());
+
+	osg::ref_ptr<osg::Uniform> mainColor = new osg::Uniform("mainColor", osg::Vec4(1.0, 0.5, 0.5, 0.2));
+	mainColor->setUpdateCallback(new ColorCallback);
+
+	/*osg::ref_ptr<osg::Uniform> iResolution = new osg::Uniform("iResolution", osg::Vec3(1.0, 0.5, 0.5));
+	osg::ref_ptr<osg::Uniform> iGlobalTime = new osg::Uniform("iGlobalTime", float(1.0));
+	osg::ref_ptr<osg::Uniform> iMouse = new osg::Uniform("iMouse", osg::Vec4(1.0,1.0,1.0,1.0));*/
+	ss.addUniform(mainColor.get());
+
+	/*ss.addUniform(iResolution.get());
+	ss.addUniform(iGlobalTime.get());
+	ss.addUniform(iMouse.get());*/
+	ss.setAttributeAndModes(program.get());
+}
+
+int main()
+{
+	osg::ref_ptr<osg::Node> model = osgDB::readNodeFile("cow.osg");
+	createShaders(*(model.get()->getOrCreateStateSet()));
+
+	osgViewer::Viewer viewer;
+	viewer.setSceneData(model);
+	return viewer.run();
+}
+
