@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BitMap", "BitMap\BitMap.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextShow", "TextShow\TextShow.vcxproj", "{4739EA39-D4B4-47AA-8680-83F9E9B3733E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextureSet", "TextureSet\TextureSet.vcxproj", "{B905F670-860C-4602-8C48-54B602F1D749}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +113,14 @@ Global
 		{4739EA39-D4B4-47AA-8680-83F9E9B3733E}.Release|x64.Build.0 = Release|x64
 		{4739EA39-D4B4-47AA-8680-83F9E9B3733E}.Release|x86.ActiveCfg = Release|Win32
 		{4739EA39-D4B4-47AA-8680-83F9E9B3733E}.Release|x86.Build.0 = Release|Win32
+		{B905F670-860C-4602-8C48-54B602F1D749}.Debug|x64.ActiveCfg = Debug|x64
+		{B905F670-860C-4602-8C48-54B602F1D749}.Debug|x64.Build.0 = Debug|x64
+		{B905F670-860C-4602-8C48-54B602F1D749}.Debug|x86.ActiveCfg = Debug|Win32
+		{B905F670-860C-4602-8C48-54B602F1D749}.Debug|x86.Build.0 = Debug|Win32
+		{B905F670-860C-4602-8C48-54B602F1D749}.Release|x64.ActiveCfg = Release|x64
+		{B905F670-860C-4602-8C48-54B602F1D749}.Release|x64.Build.0 = Release|x64
+		{B905F670-860C-4602-8C48-54B602F1D749}.Release|x86.ActiveCfg = Release|Win32
+		{B905F670-860C-4602-8C48-54B602F1D749}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
