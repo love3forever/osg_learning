@@ -61,24 +61,14 @@ void createShaders(osg::StateSet& ss) {
 	osg::ref_ptr<osg::Shader> vertShader = new osg::Shader(osg::Shader::VERTEX, vertSource);
 	osg::ref_ptr<osg::Shader> fragShader = new osg::Shader(osg::Shader::FRAGMENT, fragSource);
 
-	//osg::ref_ptr<osg::Shader> shader = osgDB::readShaderFile("shaders/self/se.vs");
-
 	osg::ref_ptr<osg::Program> program = new osg::Program;
 	program->addShader(vertShader.get());
 	program->addShader(fragShader.get());
-	//program->addShader(shader.get());
 
 	osg::ref_ptr<osg::Uniform> mainColor = new osg::Uniform("mainColor", osg::Vec4(1.0, 0.5, 0.5, 0.2));
 	mainColor->setUpdateCallback(new ColorCallback);
 
-	/*osg::ref_ptr<osg::Uniform> iResolution = new osg::Uniform("iResolution", osg::Vec3(1.0, 0.5, 0.5));
-	osg::ref_ptr<osg::Uniform> iGlobalTime = new osg::Uniform("iGlobalTime", float(1.0));
-	osg::ref_ptr<osg::Uniform> iMouse = new osg::Uniform("iMouse", osg::Vec4(1.0,1.0,1.0,1.0));*/
 	ss.addUniform(mainColor.get());
-
-	/*ss.addUniform(iResolution.get());
-	ss.addUniform(iGlobalTime.get());
-	ss.addUniform(iMouse.get());*/
 	ss.setAttributeAndModes(program.get());
 }
 
