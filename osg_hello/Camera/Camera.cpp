@@ -28,18 +28,33 @@ osg::Camera* createBirdEye(const osg::BoundingSphere& bs) {
 
 	camera->setViewMatrixAsLookAt(eyePoint, center, upDirection);
 
+	osg::ref_ptr<osg::GraphicsContext::Traits> traints = new osg::GraphicsContext::Traits;
+	traints->x = 0;
+	traints->y = 0;
+	traints->width = 800;
+	traints->height = 600;
+	traints->windowDecoration = true;
+	traints->pbuffer = false;
+	traints->doubleBuffer = true;
+	osg::ref_ptr<osg::GraphicsContext> gc = osg::GraphicsContext::createGraphicsContext(traints.get());
+	camera->setGraphicsContext(gc.get());
+
 	return camera.release();
 }
 
 
 int main()
 {
+
+
 	osg::Node* model = osgDB::readNodeFile("lz.osg");
 	osg::Camera* camera = createBirdEye(model->getBound());
 	camera->addChild(model);
 
+
 	osgViewer::Viewer viewer;
 	viewer.setSceneData(camera);
+
     return viewer.run();
 }
 
